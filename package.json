@@ -1,0 +1,93 @@
+{
+  "name": "python-override-hint",
+  "displayName": "Python Override Hint",
+  "description": "Python 代码中类方法是否被重写的可视化提示器",
+  "version": "1.0.0",
+  "publisher": "Victor-lee",
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomy128/vscode-python-override-hint.git"
+  },
+  "homepage": "https://github.com/tomy128/vscode-python-override-hint#readme",
+  "bugs": {
+    "url": "https://github.com/tomy128/vscode-python-override-hint/issues"
+  },
+  "license": "MIT",
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "python",
+    "override",
+    "inheritance",
+    "class",
+    "method"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "PythonOverrideHint.refresh",
+        "title": "Python Override Hint: Refresh",
+        "category": "Python Override Hint"
+      },
+      {
+        "command": "PythonOverrideHint.test",
+        "title": "Python Override Hint: Test Plugin",
+        "category": "Python Override Hint"
+      },
+      {
+        "command": "PythonOverrideHint.showStatus",
+        "title": "Python Override Hint: Show Status",
+        "category": "Python Override Hint"
+      }
+    ],
+    "configuration": {
+      "title": "Python Override Hint",
+      "properties": {
+        "PythonOverrideHint.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "启用 Python Override Hint 提示器"
+        },
+        "PythonOverrideHint.debounceDelay": {
+          "type": "number",
+          "default": 1000,
+          "description": "分析延迟时间（毫秒）"
+        },
+        "PythonOverrideHint.pythonPath": {
+          "type": "string",
+          "default": "python",
+          "description": "Python 解释器路径"
+        }
+      }
+    }
+  },
+    "engines": {
+    "vscode": "^1.74.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.126",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.5",
+    "vsce": "^2.15.0"
+  }
+}
