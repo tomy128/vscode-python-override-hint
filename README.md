@@ -83,6 +83,8 @@ code .
 - `PythonOverrideHint.enabled`: 启用/禁用插件（默认：true）
 - `PythonOverrideHint.debounceDelay`: 分析延迟时间，毫秒（默认：1000）
 - `PythonOverrideHint.pythonPath`: Python 解释器路径（默认："python"）
+- `PythonOverrideHint.classCodeLens.enabled`: 显示类级 CodeLens（类定义行）（默认：true）
+- `PythonOverrideHint.classCodeLens.style`: 类级 CodeLens 显示方式（默认：`summary`）。`summary` 显示数量摘要并支持 QuickPick；`list` 直接列出名称（同样支持 QuickPick）。
 
 ## 📁 项目结构
 
@@ -97,7 +99,8 @@ vscode-python-override/
 ├── resources/
 │   ├── icon.png              # 插件图标
 │   ├── override-up.svg       # 向上箭头图标
-│   └── override-down.svg     # 向下箭头图标
+│   ├── override-down.svg     # 向下箭头图标
+│   └── override-both.svg     # 复合箭头图标（同时显示上下）
 └── README.md                 # 说明文档
 ```
 

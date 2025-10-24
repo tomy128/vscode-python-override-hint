@@ -1,0 +1,14 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- 外圆 -->
+  <circle cx="12" cy="12" r="9.5" fill="none" stroke="#4A90E2" stroke-width="1.8"/>
+
+  <!-- 左箭头（绿色，朝上） -->
+  <path d="M7.5 14 L9.5 8 L11.5 14 L10.5 14 L10.5 18 L8.5 18 L8.5 14 L7.5 14 Z"
+        fill="#4CAF50" stroke="#4CAF50" stroke-width="0.6"/>
+
+  <!-- 右箭头（蓝色，朝下，对称） -->
+  <g transform="translate(24,24) rotate(180)">
+    <path d="M7.5 14 L9.5 8 L11.5 14 L10.5 14 L10.5 18 L8.5 18 L8.5 14 L7.5 14 Z"
+          fill="#4A90E2" stroke="#4A90E2" stroke-width="0.6"/>
+  </g>
+</svg>

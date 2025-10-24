@@ -2,9 +2,13 @@
   "name": "python-override-hint",
   "displayName": "Python Override Hint",
   "description": "Python 代码中类方法是否被重写的可视化提示器",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Victor-lee",
   "icon": "resources/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tomy128/vscode-python-override-hint.git"
@@ -14,6 +18,11 @@
     "url": "https://github.com/tomy128/vscode-python-override-hint/issues"
   },
   "license": "MIT",
+  "author": {
+    "name": "Victor Lee"
+  },
+  "qna": "marketplace",
+  "pricing": "Free",
   "categories": [
     "Programming Languages",
     "Linters"
@@ -25,24 +34,22 @@
     "class",
     "method"
   ],
+  "extensionKind": [
+    "workspace"
+  ],
   "activationEvents": [
     "onLanguage:python"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "PythonOverrideHint.refresh",
+        "command": "pythonOverrideHint.refresh",
         "title": "Python Override Hint: Refresh",
         "category": "Python Override Hint"
       },
       {
-        "command": "PythonOverrideHint.test",
-        "title": "Python Override Hint: Test Plugin",
-        "category": "Python Override Hint"
-      },
-      {
-        "command": "PythonOverrideHint.showStatus",
-        "title": "Python Override Hint: Show Status",
+        "command": "pythonOverrideHint.quickPickRelations",
+        "title": "Python Override Hint: Pick Relations",
         "category": "Python Override Hint"
       }
     ],
@@ -63,11 +70,22 @@
           "type": "string",
           "default": "python",
           "description": "Python 解释器路径"
+        },
+        "PythonOverrideHint.classCodeLens.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "显示类级 CodeLens（类定义行）。关闭以仅显示方法级 CodeLens。"
+        },
+        "PythonOverrideHint.classCodeLens.style": {
+          "type": "string",
+          "enum": ["summary", "list"],
+          "default": "summary",
+          "description": "类级 CodeLens 显示方式：summary 显示数量摘要并支持 QuickPick；list 直接列出名称。"
         }
       }
     }
   },
-    "engines": {
+  "engines": {
     "vscode": "^1.74.0"
   },
   "main": "./out/extension.js",
